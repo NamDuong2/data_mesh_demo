@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div class="form-wrapper">
+    <h2 class="title">Register Data Product</h2>
+    <form method="POST" action="{{ url_for('data_product') }}">
+      {{ form.csrf_token }}
+
+      <fieldset class="form-field">{{ form.data_prod_name.label }} {{ form.data_prod_name }}
+        {% if form.data_prod_name.errors %}
+          <ul class="errors">
+              {% for error in form.email.errors %}
+                <li class="error">
+                    <i class="fas fa-exclamation"></i> <span class="error-message">{{ error }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+        {% endif %}
+      </fieldset>
+
+
+      <fieldset class="form-field">{{ form.tags.label }} {{ form.tags }}
+        {% if form.tags.errors %}
+          <ul class="errors">
+              {% for error in form.email.errors %}
+                <li class="error">
+                    <i class="fas fa-exclamation"></i> <span class="error-message">{{ error }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+        {% endif %}
+      </fieldset>
+
+      <fieldset class="form-field">{{ form.data_prod_owner.label }} {{ form.data_prod_owner }}
+        {% if form.data_prod_owner.errors %}
+          <ul class="errors">
+              {% for error in form.email.errors %}
+                <li class="error">
+                    <i class="fas fa-exclamation"></i> <span class="error-message">{{ error }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+        {% endif %}
+      </fieldset>
+
+      <fieldset class="form-field">{{ form.data_prod_owner_contact.label }} {{ form.data_prod_owner_contact }}
+        {% if form.data_prod_owner_contact.errors %}
+          <ul class="errors">
+              {% for error in form.tech_support_contact.errors %}
+                <li class="error">
+                    <i class="fas fa-exclamation"></i> <span class="error-message">{{ error }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+        {% endif %}
+      </fieldset>
+
+      <fieldset class="form-field">{{ form.res_tech_team.label }} {{ form.res_tech_team }}
+        {% if form.res_tech_team.errors %}
+          <ul class="errors">
+              {% for error in form.email.errors %}
+                <li class="error">
+                    <i class="fas fa-exclamation"></i> <span class="error-message">{{ error }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+        {% endif %}
+      </fieldset>
+
+      <fieldset class="form-field">{{ form.tech_support_contact.label }} {{ form.tech_support_contact }}
+        {% if form.tech_support_contact.errors %}
+          <ul class="errors">
+              {% for error in form.tech_support_contact.errors %}
+                <li class="error">
+                    <i class="fas fa-exclamation"></i> <span class="error-message">{{ error }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+        {% endif %}
+      </fieldset>
+
+      <fieldset class="form-field">{{ form.business_unit.label }} {{ form.business_unit }}
+        {% if form.business_unit.errors %}
+          <ul class="errors">
+              {% for error in form.email.errors %}
+                <li class="error">
+                    <i class="fas fa-exclamation"></i> <span class="error-message">{{ error }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+        {% endif %}
+      </fieldset>
+
+      <fieldset class="form-field">{{ form.data_prod_business_description.label }} {{ form.data_prod_business_description }}
+        {% if form.data_prod_business_description.errors %}
+          <ul class="errors">
+              {% for error in form.email.errors %}
+                <li class="error">
+                    <i class="fas fa-exclamation"></i> <span class="error-message">{{ error }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+        {% endif %}
+      </fieldset>
+
+      {{ form.submit }}
+    </form>
+  </div>
+</body>
+</html>
